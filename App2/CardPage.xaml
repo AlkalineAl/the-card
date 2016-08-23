@@ -18,7 +18,7 @@
             <RowDefinition Height="464*"/>
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="image" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Source="Assets/CardFolder/2.png" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" ManipulationMode="None"  />
+        <Image x:Name="CardImage" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Source="Assets/CardFolder/2.png" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" ManipulationMode="None"  />
         <Button x:Name="Damabutton" Content="" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="70" Width="160" Click="Damabutton_Click" Grid.Row="1" Grid.Column="1" Opacity="0"/>
         <Button x:Name="Valetbutton" Content="" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Height="70" Click="Valetbutton_Click" Grid.Row="1" Grid.Column="1" Width="160" Opacity="0"/>
         <Button x:Name="Kingbutton" Content="" HorizontalAlignment="Left" Margin="0.0,0,0,0" VerticalAlignment="Bottom" Height="79" Width="160" Click="Kingbutton_Click" Grid.Row="1" Grid.Column="1" Opacity="0"/>
@@ -27,5 +27,6 @@
         <Button x:Name="Pbutton" Content="" HorizontalAlignment="Left" Margin="47,0,0,100" VerticalAlignment="Bottom" Click="Pbutton_Click" Grid.Row="1" Grid.Column="1" Width="80" Height="79" Opacity="0"/>
         <Button x:Name="Cbutton" Content="" HorizontalAlignment="Right" Margin="0,100,50,0" VerticalAlignment="Top" Click="Cbutton_Click" Grid.Row="1" Grid.Column="1" Width="80" Height="79" Opacity="0"/>
         <Button x:Name="Tbutton" Content="" HorizontalAlignment="Left" Margin="47,102,0,0" VerticalAlignment="Top" Click="Tbutton_Click" Grid.Row="1" Grid.Column="1" Width="80" Height="79" Opacity="0"/>
+        <Button x:Name="Show" Content="" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="Showbutton_Click" Grid.Row="1" Grid.Column="1" Width="80" Height="79" Opacity="0"/>
     </Grid>
 </Page>

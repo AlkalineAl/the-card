@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Шаблон элемента пустой страницы задокументирован по адресу http://go.microsoft.com/fwlink/?LinkId=234238
@@ -74,6 +75,11 @@ namespace App2
         {
             MessageDialog msgbox = new MessageDialog("Трефы", "Внимание");
             await msgbox.ShowAsync();
+        }
+
+        private void Showbutton_Click(object sender, RoutedEventArgs e)
+        {
+            CardImage.Source = new BitmapImage(new Uri(@"Assets/CardFolder/3.png", UriKind.RelativeOrAbsolute));
         }
     }
 }
