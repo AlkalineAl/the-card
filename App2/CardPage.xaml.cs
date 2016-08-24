@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -24,62 +25,185 @@ namespace App2
     /// </summary>
     public sealed partial class CardPage : Page
     {
+        public BitmapImage img = new BitmapImage();
+        public string value="";
+        public string suit="";
+        bool set_def_img = true;
         public CardPage()
         {
             this.InitializeComponent();
+            
         }
 
-        private async void Damabutton_Click(object sender, RoutedEventArgs e)
+        private void ladybutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Дама", "Внимание");
-            await msgbox.ShowAsync();
+            
+            value = "lady";
         }
 
-        private async void Valetbutton_Click(object sender, RoutedEventArgs e)
+        private void jackbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Валет", "Внимание");
-            await msgbox.ShowAsync();
+            value = "jack";
         }
 
-        private async void Kingbutton_Click(object sender, RoutedEventArgs e)
+        private void Kingbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Король", "Внимание");
-            await msgbox.ShowAsync();
+            value = "king";
         }
 
-        private async void Abutton_Click(object sender, RoutedEventArgs e)
+        private void Abutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Туз", "Внимание");
-            await msgbox.ShowAsync();
+            value = "ace";
         }
 
-        private async void Bbutton_Click(object sender, RoutedEventArgs e)
+        private void Bbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Бубны", "Внимание");
-            await msgbox.ShowAsync();
+            suit = "b";
         }
 
-        private async void Pbutton_Click(object sender, RoutedEventArgs e)
+        private void Pbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Пики", "Внимание");
-            await msgbox.ShowAsync();
+            suit = "p";
         }
 
-        private async void Cbutton_Click(object sender, RoutedEventArgs e)
+        private void Cbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Чирвы", "Внимание");
-            await msgbox.ShowAsync();
+            suit = "c";
         }
 
-        private async void Tbutton_Click(object sender, RoutedEventArgs e)
+        private void Tbutton_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog msgbox = new MessageDialog("Трефы", "Внимание");
-            await msgbox.ShowAsync();
+            suit = "t";
         }
 
         private void Showbutton_Click(object sender, RoutedEventArgs e)
         {
-            CardImage.Source = new BitmapImage(new Uri(@"Assets/CardFolder/3.png", UriKind.RelativeOrAbsolute));
+            if (set_def_img && value!="" && suit!="")
+            {
+                switch (value)
+                {
+                    case "lady":
+                        {
+                            switch (suit)
+                            {
+                                case "b":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/QD.png");
+                                        break;
+                                    }
+                                case "p":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/QS.png");
+                                        break;
+                                    }
+                                case "c":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/QH.png");
+                                        break;
+                                    }
+                                case "t":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/QC.png");
+                                        break;
+                                    }
+
+                            }
+                            break;
+                        }
+                    case "king":
+                        {
+                            switch (suit)
+                            {
+                                case "b":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/KD.png");
+                                        break;
+                                    }
+                                case "p":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/KS.png");
+                                        break;
+                                    }
+                                case "c":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/KH.png");
+                                        break;
+                                    }
+                                case "t":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/KC.png");
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    case "jack":
+                        {
+                            switch (suit)
+                            {
+                                case "b":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/JD.png");
+                                        break;
+                                    }
+                                case "p":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/JS.png");
+                                        break;
+                                    }
+                                case "c":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/JH.png");
+                                        break;
+                                    }
+                                case "t":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/JC.png");
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    case "ace":
+                        {
+                            switch (suit)
+                            {
+                                case "b":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/AD.png");
+                                        break;
+                                    }
+                                case "p":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/AS.png");
+                                        break;
+                                    }
+                                case "c":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/AH.png");
+                                        break;
+                                    }
+                                case "t":
+                                    {
+                                        img.UriSource = new Uri("ms-appx:///Assets/CardFolder/AC.png");
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    default: break;
+                }
+                CardImage.Source = img;
+                set_def_img = false;
+            }
+            else
+            {
+                set_def_img = true;
+                img.UriSource = new Uri("ms-appx:///Assets/CardFolder/2.png");
+                suit = "";
+                value = "";
+
+            }
         }
     }
 }

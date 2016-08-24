@@ -29,10 +29,11 @@ namespace App2
             this.InitializeComponent();
             ContentFrame.Navigate(typeof(CardPage));
 
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
              AppViewBackButtonVisibility.Visible;
 
-            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += TestView_BackRequested;
+
+            SystemNavigationManager.GetForCurrentView().BackRequested += TestView_BackRequested;
             radioButton1.Background = new SolidColorBrush(Colors.Red);
             radioButton2.Background = new SolidColorBrush(Colors.Transparent);
         }
@@ -43,13 +44,13 @@ namespace App2
             {
                 e.Handled = true;
                 ContentFrame.GoBack();
-                if (ContentFrame.Content.ToString() == "App2.MainDiary")
+                if (ContentFrame.Content.ToString() == "App2.MainPage")
                 {
                     radioButton1.IsChecked = true;
                     radioButton1.Background = new SolidColorBrush(Colors.Red);
                     radioButton2.Background = new SolidColorBrush(Colors.Transparent);
                 }
-                if (ContentFrame.Content.ToString() == "App2.MapPage")
+                if (ContentFrame.Content.ToString() == "App2.CardPage")
                 {
                     radioButton2.IsChecked = true;
                     radioButton2.Background = new SolidColorBrush(Colors.Red);
